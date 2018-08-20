@@ -2,7 +2,8 @@ import {Component} from '@angular/core';
 import {NavController} from 'ionic-angular';
 import {DocumentsProvider} from "../../providers/documents/documents";
 import { DocumentViewer } from '@ionic-native/document-viewer';
-import {GlobalsProvider} from "../../providers/globals/globals";
+import { GlobalsProvider } from "../../providers/globals/globals";
+import { File } from '@ionic-native/file';
 
 @Component({
     selector: 'page-documents',
@@ -14,7 +15,7 @@ export class DocumentsPage {
     public selected_document: any;
     public keys: String[];
 
-    constructor(public navCtrl: NavController, private documentsProvider: DocumentsProvider, private document: DocumentViewer, private globals: GlobalsProvider) {
+    constructor(public navCtrl: NavController, private documentsProvider: DocumentsProvider, private document: DocumentViewer, private globals: GlobalsProvider, private file: File) {
         this.loadDocuments();
     }
 
@@ -27,14 +28,18 @@ export class DocumentsPage {
     }
 
     showDocument(id) {
-        var options = {
-            title: 'PDF'
-        }
+        //var options = {
+        //    title: 'PDF'
+        //}
+
+      let path = null;
 
         this.documentsProvider.get(id)
             .then(data => {
                 this.selected_document = data;
-                this.document.viewDocument(this.globals.dataDirectory + 'data/assets/' + this.selected_document.file, 'application/pdf', options);
+            //    this.document.viewDocument('ms-appx-web:///data/assets/' + this.selected_document.file, 'application/pdf', options);
+                window.open('data/assets/' + this.selected_document.file, '_blank');
+             //   console.log('File:///C:/data/assets/' + this.selected_document.file);
             });
     }
 }

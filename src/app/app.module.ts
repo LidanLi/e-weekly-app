@@ -29,7 +29,13 @@ import { TripProvider } from '../providers/trip/trip';
 import { SyncProvider } from '../providers/sync/sync';
 import { GlobalsProvider } from '../providers/globals/globals';
 import {SyncPage} from "../pages/sync/sync";
-import {Network} from "@ionic-native/network";
+import { Network } from "@ionic-native/network";
+
+import { VideosLinksPage } from '../pages/videos-links/videos-links';
+import { CourseParticipantsPage } from '../pages/course-participants/course-participants';
+import { LinksProvider } from '../providers/links/links';
+import { ParticipantsProvider } from '../providers/participants/participants';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
     declarations: [
@@ -43,11 +49,15 @@ import {Network} from "@ionic-native/network";
         TabsPage,
         EventPage,
         ContactPage,
-        SyncPage
+        SyncPage,
+      VideosLinksPage,
+        CourseParticipantsPage
+
     ],
     imports: [
         BrowserModule,
-        HttpModule,
+      HttpModule,
+        HttpClientModule,
         IonicModule.forRoot(MyApp)
     ],
     bootstrap: [IonicApp],
@@ -62,7 +72,9 @@ import {Network} from "@ionic-native/network";
         TabsPage,
         ArticlePage,
         ContactPage,
-        SyncPage
+      SyncPage,
+      VideosLinksPage,
+        CourseParticipantsPage
     ],
     providers: [
         StatusBar,
@@ -80,7 +92,9 @@ import {Network} from "@ionic-native/network";
         SyncProvider,
         Zip,
         GlobalsProvider,
-        Network
+      Network,
+      LinksProvider,
+        ParticipantsProvider
     ]
 })
 export class AppModule {

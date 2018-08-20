@@ -4,7 +4,8 @@ import {EventsProvider} from "../../providers/events/events";
 import {ContactPage} from "../contact/contact";
 import {DocumentsProvider} from "../../providers/documents/documents";
 import {DocumentViewer} from "@ionic-native/document-viewer";
-import {GlobalsProvider} from "../../providers/globals/globals";
+import { GlobalsProvider } from "../../providers/globals/globals";
+import {LinksProvider} from '../../providers/links/links';
 
 @Component({
     selector: 'page-event',
@@ -34,7 +35,8 @@ export class EventPage {
         this.documentsProvider.get(id)
             .then(data => {
                 this.selected_document = data;
-                this.document.viewDocument(this.globals.dataDirectory + 'data/assets/' + this.selected_document.file, 'application/pdf', options);
+               // this.document.viewDocument(this.globals.dataDirectory + 'data/assets/' + this.selected_document.file, 'application/pdf', options);
+                window.open('data/assets/' + this.selected_document.file, '_blank');
             });
     }
 

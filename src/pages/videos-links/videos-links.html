@@ -1,0 +1,133 @@
+<!--
+  Generated template for the VideosLinksPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>Videos/Links</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+<ion-content padding>
+  <ion-card *ngFor="let key of keys">
+    <h2 class="card-title">{{ key }}</h2>
+    <ion-card-content *ngFor="let link of links[key]">
+      <!--<ion-icon name="link"></ion-icon> {{ link.name }}-->
+      <div class="body" [innerHTML]="link.body_html"></div>
+    </ion-card-content>
+    <!--<ion-list>
+      <a ion-item text-wrap *ngFor="let link of links[key]">
+        <ion-icon name="link"></ion-icon> {{ link.name }}
+        <div class="body" [innerHTML]="link.body_html"></div>
+      </a>
+  </ion-list>
+  </ion-card>-->
+
+  <!--<ion-content padding>
+    <ion-card>
+      <ion-card-content>
+        <div class="body">
+          <strong>Video Link 1</strong>
+          <p>
+            <a href="https://www.francetvinfo.fr/economie/crise-financiere-en-chine/la-chine-une-economie-colossale-aux-pieds-d-argile_2430955.html" target="_blank">La Chine, une économie colossale aux pieds d'argile (1:17)</a>
+          </p>
+        </div>
+      </ion-card-content>
+    </ion-card>
+    <ion-card>
+      <ion-card-content>
+        <div class="body">
+          <strong>Video Link 2</strong>
+          <p>
+            <a href="https://www.youtube.com/watch?v=D_WY63wm6Hw" target="_blank">How Xi Jinping Went From Feeding Pigs to Ruling China (4:29)
+              </a>
+          </p>
+        </div>
+      </ion-card-content>
+    </ion-card>
+
+    <ion-card>
+      <ion-card-content>
+        <div class="body">
+          Cultural Tourism DC is a grass-roots, nonprofit coalition of more than 230 arts, heritage, community, and cultural organizations collaborating to promote the less-known stories and attractions of Washington. The website lists tours, itineraries, calendars, and plenty of background information about historic and cultural sites that you won't find anywhere else.
+          <p>
+            <a href="http://www.culturaltourismdc.org" target="_blank">www.culturaltourismdc.org</a>
+          </p>
+        </div>
+      </ion-card-content>
+    </ion-card>
+    <ion-card>
+      <ion-card-content>
+        <div class="body">
+          This is the city of Washington's website, full of details about both federal and local D.C., including history and tourism. Every day, the site lists a calendar of what's going on around town.
+          <p>
+            <a href="http://www.dc.gov" target="_blank">www.dc.gov</a>
+          </p>
+        </div>
+      </ion-card-content>
+    </ion-card>
+    <ion-card>
+      <ion-card-content>
+        <div class="body">
+          This is the site for the U.S. House of Representatives. Find out about the legislative process, what's going on in Congress, and what's going on with your own representatives -- the site links you to the individual websites for each of the representatives.
+          <p>
+            <a href="http://www.house.gov" target="_blank">www.house.gov</a>
+          </p>
+        </div>
+      </ion-card-content>
+    </ion-card>
+    <ion-card>
+      <ion-card-content>
+        <div class="body">
+          This National Park Service site includes links to some dozen memorials and monuments. When you click "Find a Park" then click "DC" on the map, a map of the capital's National Park sites appears, including the National World War II Memorial, Washington Monument, Jefferson Memorial, National Mall, Ford's Theatre, FDR Memorial, Lincoln Memorial, and Vietnam Veterans Memorial.
+          <p>
+            <a href="http://www.nps.gov" target="_blank">www.nps.gov</a>
+          </p>
+        </div>
+      </ion-card-content>
+    </ion-card>
+    <ion-card>
+      <ion-card-content>
+        <div class="body">
+          In the U.S. Senate site, click on "Visitors" for an online virtual tour of the Capitol building and information about touring the actual Senate Gallery. Also, find out when the Senate is in session. The site connects you with the websites for each of the senators; you can use this site to e-mail your senator.
+          <p>
+            <a href="http://www.senate.gov" target="_blank">www.senate.gov</a>
+          </p>
+        </div>
+      </ion-card-content>
+    </ion-card>
+    <ion-card>
+      <ion-card-content>
+        <div class="body">
+          This is the Smithsonian Institution's home page, which provides information about visiting Washington and leads you to the individual websites for each Smithsonian museum.
+          <p>
+            <a href="http://www.si.edu" target="_blank">www.si.edu</a>
+          </p>
+        </div>
+      </ion-card-content>
+    </ion-card>
+    <ion-card>
+      <ion-card-content>
+        <div class="body">
+          The Capitol Visitor Center's website posts the history of the Capitol and the center, discusses the art and architecture of the buildings and the legislative work that takes place within, and is the portal to the online reservation system for booking tours of the Capitol.
+          <p>
+            <a href="http://www.visitthecapitol.com" target="_blank">www.visitthecapitol.com </a>
+          </p>
+        </div>
+      </ion-card-content>
+    </ion-card>
+    <ion-card>
+      <ion-card-content>
+        <div class="body">
+          The print magazine of the same name posts some of its articles here, including information on what's going on at museums, theaters, and other cultural showplaces around town, and a directory of reviews of Washington restaurants. The magazine really wants you to buy the print edition, though -- for sale at bookstores, drugstores, and grocery stores throughout the area.
+          <p>
+            <a href="http://www.washingtonian.com" target="_blank">www.washingtonian.com </a>
+          </p>
+        </div>
+      </ion-card-content>
+    </ion-card>
+  </ion-content>-->
