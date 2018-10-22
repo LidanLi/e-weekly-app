@@ -1,6 +1,7 @@
 import {Component} from '@angular/core';
 import {NavController, NavParams, LoadingController, Platform, AlertController} from 'ionic-angular';
-import {SyncProvider} from "../../providers/sync/sync";
+import { SyncProvider } from "../../providers/sync/sync";
+import { GlobalsProvider } from "../../providers/globals/globals";
 
 /**
  * Generated class for the SyncPage page.
@@ -15,7 +16,11 @@ import {SyncProvider} from "../../providers/sync/sync";
 })
 export class SyncPage {
 
-    constructor(public navCtrl: NavController, public navParams: NavParams, private syncProvider: SyncProvider, public loadingCtrl: LoadingController, private platform: Platform, public alertCtrl: AlertController) {
+  public trip_id: any;
+  public lists: any = [];
+  constructor(public navCtrl: NavController, public navParams: NavParams, private syncProvider: SyncProvider, public loadingCtrl: LoadingController, private platform: Platform, public alertCtrl: AlertController, public globals: GlobalsProvider) {
+    this.trip_id = globals.getTripId();
+    this.loadELDPList();
     }
 
     ionViewDidLoad() {
@@ -47,4 +52,20 @@ export class SyncPage {
             alert.present();
         }
     }
+
+
+  setTrip() {
+    this.globals.setTripId(this.CourseList);
+    this.syncData();
+  }
+
+  loadELDPList() {
+    this.globals.getELDPCourseList()
+      .then(data => {
+        this.lists = data;
+      });
+    
+  }
+
+
 }

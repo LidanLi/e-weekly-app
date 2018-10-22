@@ -10,7 +10,8 @@ import {GlobalsProvider} from "../../providers/globals/globals";
 })
 export class ContactsPage {
 
-    public contacts: any;
+  public contacts: any;
+  public contactsUnSorted: any;
 
     constructor(public navCtrl: NavController, private contactsProvider: ContactsProvider, public globals: GlobalsProvider) {
         this.loadContacts();
@@ -18,8 +19,15 @@ export class ContactsPage {
 
     loadContacts() {
         this.contactsProvider.all()
-            .then(data => {
-                this.contacts = data;
+          .then(data => {
+            this.contacts = data;
+              //this.contactsUnSorted = data;
+              //this.contacts = this.contactsUnSorted.slice(0);
+              //this.contacts.sort((leftSide, rightSide): number => {
+              //  if (leftSide.last_name < rightSide.last_name) return -1;
+              //  if (leftSide.last_name > rightSide.last_name) return 1;
+              //  return 0;
+              //});
             });
     }
 

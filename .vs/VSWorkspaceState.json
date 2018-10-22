@@ -1,0 +1,16 @@
+{
+  "ExpandedNodes": [
+    "",
+    "\\src",
+    "\\src\\pages",
+    "\\src\\pages\\contact",
+    "\\src\\pages\\contacts",
+    "\\src\\pages\\course-participants",
+    "\\src\\pages\\documents",
+    "\\src\\providers",
+    "\\src\\providers\\contacts",
+    "\\src\\providers\\participants"
+  ],
+  "SelectedNode": "\\src\\pages\\documents\\documents.ts",
+  "PreviewInSolutionExplorer": false
+}

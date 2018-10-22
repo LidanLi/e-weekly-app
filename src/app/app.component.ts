@@ -22,7 +22,8 @@ export class MyApp {
             statusBar.styleDefault();
             splashScreen.hide();
 
-            this.checkDataExists();
+          this.checkDataExists();
+         // this.globals.getELDPCourseList();
         });
     }
 

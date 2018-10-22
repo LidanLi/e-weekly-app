@@ -6,18 +6,21 @@ import {Zip} from "@ionic-native/zip";
 import { GlobalsProvider } from "../globals/globals";
 import { File } from '@ionic-native/file';
 import { Observable } from 'rxjs/Observable';
+import { saveAs } from 'file-saver/FileSaver';
 
 
 @Injectable()
 export class SyncProvider {
+  
 
     constructor(public http: Http, private transfer: FileTransfer, private zip: Zip, private globals: GlobalsProvider, private file: File) {
+     
     }
 
     syncData() {
       return new Promise(resolve => {
         //const fileTransfer: FileTransferObject = this.transfer.create();
-        let update_url = this.globals.api_url + '/trips/' + 1 + '/download';
+        let update_url = this.globals.api_url + '/trips/' + this.globals.trip_id + '/download';
         //let update_url = this.globals.api_url + '/user';
         let headers = new Headers();
         //headers.append('Content-Type', 'application/x-www-form-urlencoded');
@@ -45,9 +48,10 @@ export class SyncProvider {
         this.http.get(update_url, options)
            .subscribe((res) => {
             console.log('start download:', res);
-            const blob = new Blob([res._body], { type: "application/zip" });
-            const url = window.URL.createObjectURL(blob);
-            window.open(url, '_blank');
+             const blob = new Blob([res._body], { type: "application/zip" });
+            // saveAs(blob, "package.zip");
+           const url = window.URL.createObjectURL(blob);
+           window.open(url, '_blank');
             //console.log(res)
           }, () => {
             console.log("download completed.")
@@ -55,5 +59,8 @@ export class SyncProvider {
       });
            
     }
+
+  
+  
 
 }
