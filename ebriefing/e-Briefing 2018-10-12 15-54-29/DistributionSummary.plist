@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>e-Briefing.ipa</key>
+	<array>
+		<dict>
+			<key>architectures</key>
+			<array>
+				<string>arm64</string>
+			</array>
+			<key>certificate</key>
+			<dict>
+				<key>SHA1</key>
+				<string>A7E8BEA45DEA2BAB2005E0F5D0DB46BD013854DB</string>
+				<key>dateExpires</key>
+				<string>2019-10-12</string>
+				<key>type</key>
+				<string>iOS Distribution</string>
+			</dict>
+			<key>entitlements</key>
+			<dict>
+				<key>application-identifier</key>
+				<string>PFR5L7R52F.com.cds.applications.ebrief</string>
+				<key>com.apple.developer.team-identifier</key>
+				<string>PFR5L7R52F</string>
+			</dict>
+			<key>name</key>
+			<string>e-Briefing.app</string>
+			<key>team</key>
+			<dict>
+				<key>id</key>
+				<string>PFR5L7R52F</string>
+				<key>name</key>
+				<string>Lidan Li</string>
+			</dict>
+		</dict>
+	</array>
+</dict>
+</plist>
