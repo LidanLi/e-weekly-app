@@ -1,0 +1,29 @@
+<ion-header>
+    <ion-navbar>
+        <ion-title *ngIf="participant">{{ participant.name }}</ion-title>
+    </ion-navbar>
+</ion-header>
+
+
+<ion-content padding>
+    <ion-card *ngIf="participant">
+        <div class="contact-header">
+            <div *ngIf="participant.image" class="contact-photo">
+                <img src="{{ globals.dataDirectory }}data/assets/{{ participant.image }}">
+            </div>
+            <div class="contact-info">
+              <h1>{{ participant.name }}</h1>
+                <p><strong>{{ participant.title }}</strong></p>
+            </div>
+        </div>
+        
+        <ion-card-content>
+            <ul>
+              <li *ngIf="participant.telephone"><ion-icon name="ios-call-outline"></ion-icon> {{ participant.telephone }}</li>
+              <li *ngIf="participant.email"><ion-icon name="ios-mail-outline"></ion-icon> {{ participant.email }}</li>
+            </ul>
+
+            <div class="body" [innerHTML]="participant.body_html"></div>
+        </ion-card-content>
+    </ion-card>
+</ion-content>

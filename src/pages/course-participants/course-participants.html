@@ -1,0 +1,32 @@
+<!--
+  Generated template for the CourseParticipantsPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>Course Participants</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+  <div *ngFor="let participant of participants">
+    <ion-card tappable *ngIf="participant.is_participant" (click)="showContact(participant.id)">
+      <ion-item>
+        <ion-avatar item-start *ngIf="participant.image;else elseBlock">
+          <img src="{{ globals.dataDirectory }}data/assets/{{ participant.image }}">
+        </ion-avatar>
+        <ng-template #elseBlock>
+          <ion-icon name="contact" item-start></ion-icon>
+        </ng-template>
+        <span class="card-title">{{ participant.name }}</span>
+        <p class="contact-title">{{ participant.title }}</p>
+        <p class="contact-information" *ngIf="participant.telephone != null"><ion-icon name="ios-call-outline"></ion-icon> {{ participant.telephone }}</p>
+      </ion-item>
+    </ion-card>
+  </div>
+</ion-content>
