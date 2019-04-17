@@ -27,4 +27,9 @@ export class DayPage {
             event: id
         });
     }
+
+    formatTime(time: string){
+        var localtime = time.substr(0,5);
+        return localtime;
+    }
 }

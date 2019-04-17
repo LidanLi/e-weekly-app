@@ -4,6 +4,7 @@ import {DocumentsProvider} from "../../providers/documents/documents";
 import { DocumentViewer } from '@ionic-native/document-viewer';
 import { GlobalsProvider } from "../../providers/globals/globals";
 import { File } from '@ionic-native/file';
+import { FileOpener } from '@ionic-native/file-opener';
 
 @Component({
     selector: 'page-documents',
@@ -15,7 +16,9 @@ export class DocumentsPage {
     public selected_document: any;
     public keys: String[];
 
-    constructor(public navCtrl: NavController, private documentsProvider: DocumentsProvider, private document: DocumentViewer, private globals: GlobalsProvider, private file: File) {
+    constructor(public navCtrl: NavController, private documentsProvider: DocumentsProvider, private document: DocumentViewer, private globals: GlobalsProvider, private file: File,
+                private fileOpener: FileOpener)
+{
         this.loadDocuments();
     }
 
@@ -28,18 +31,33 @@ export class DocumentsPage {
     }
 
     showDocument(id) {
-        var options = {
+        /*var options = {
             title: 'PDF'
-        }
-
-      let path = null;
+        }*/
 
         this.documentsProvider.get(id)
             .then(data => {
                 this.selected_document = data;
-                this.document.viewDocument(this.globals.dataDirectory + 'data/assets/' + this.selected_document.file, 'application/pdf', options);
-              //  window.open('data/assets/' + this.selected_document.file, '_blank');
-             //   console.log('File:///C:/data/assets/' + this.selected_document.file);
+                let fileExtn = this.selected_document.file.split('.').reverse()[0];
+                let fileMIMEType = this.getMIMEtype(fileExtn);
+                //this.document.viewDocument(this.globals.dataDirectory + 'data/assets/' + this.selected_document.file, 'application/pdf', options);
+                this.fileOpener.open(this.globals.dataDirectory + 'data/assets/' + this.selected_document.file, fileMIMEType)
+                    .then(()=> console.log('File is opened'))
+                    .catch(e => console.log('Error opening file', e));
             });
+    }
+
+    getMIMEtype(extn){
+        let ext = extn.toLocaleLowerCase();
+        let MIMETypes = {
+            'pdf' : 'application/pdf',
+            'docx':'application/vnd.openxmlformats-officedocument.wordprocessingml.document',
+            'doc' : 'application/msword',
+            'xls' : 'application/vnd.ms-excel',
+            'xlsx': 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet',
+            'ppt' : 'application/vnd.ms-powerpoint',
+            'pptx': 'application/vnd.openxmlformats-officedocument.presentationml.presentation'
+        }
+        return MIMETypes[ext];
     }
 }

@@ -11,7 +11,7 @@ export class GlobalsProvider {
     dataDirectory: string = '';
     api_key: string = 'ESfJjx7vJvAiJwAiSvirCIp3GUBZicAIdy7oNk3tVQGFLKECnVOPZ81iDg4c';
     trip_id: any = '1';
-    api_url: string = 'https://ecourse.csps-efpc.net/api';
+    api_url: string = 'https://ecoursetest.csps-efpc.net/api';
     list: any;
 
     constructor(public http: Http, private platform: Platform, private file: File) {
@@ -52,7 +52,7 @@ export class GlobalsProvider {
           return Promise.resolve(this.list);
         }
          return new Promise(resolve => {
-          this.http.get(this.api_url + '/publishlist')
+          this.http.get(this.api_url + '/publishlistadmin')
             .map(res => res.json())
             .subscribe(data => {
               this.list = data;

@@ -4,6 +4,7 @@ import {DaysProvider} from '../../providers/days/days';
 import {TripProvider} from "../../providers/trip/trip";
 import {DayPage} from '../day/day';
 import {SyncPage} from "../sync/sync";
+import {HomePage} from "../home/home";
 
 @Component({
     selector: 'page-days',
@@ -51,5 +52,8 @@ export class DaysPage {
         window.location.reload();
     }
 
+    goToHomePage() {
+        this.navCtrl.push(HomePage);
+    }
 
 }

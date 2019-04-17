@@ -5,7 +5,7 @@ import { ContactsPage } from '../contacts/contacts';
 import { DocumentsPage } from '../documents/documents';
 import { DaysPage } from '../days/days';
 import { ArticlesProvider } from "../../providers/articles/articles";
-import { VideosLinksPage } from '../videos-links/videos-links';
+//import { VideosLinksPage } from '../videos-links/videos-links';
 import { CourseParticipantsPage } from '../course-participants/course-participants';
 
 
@@ -20,7 +20,7 @@ export class TabsPage {
   documents = DocumentsPage;
   articles = ArticlesPage;
   contacts = ContactsPage;
-  videoslinks = VideosLinksPage;
+  //videoslinks = VideosLinksPage;
   courseparticipants = CourseParticipantsPage;
 
   constructor(private articlesProvider: ArticlesProvider) {

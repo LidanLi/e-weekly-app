@@ -11,6 +11,7 @@ import {DaysPage} from '../pages/days/days';
 import {DayPage} from '../pages/day/day';
 import {EventPage} from '../pages/event/event';
 import {TabsPage} from '../pages/tabs/tabs';
+import {HomePage} from "../pages/home/home";
 
 import {StatusBar} from '@ionic-native/status-bar';
 import {SplashScreen} from '@ionic-native/splash-screen';
@@ -39,6 +40,8 @@ import { HttpClientModule } from '@angular/common/http';
 import { NotesPage } from '../pages/notes/notes';
 import { ParticipantPage } from '../pages/participant/participant';
 
+import { FileOpener } from '@ionic-native/file-opener';
+
 @NgModule({
     declarations: [
         MyApp,
@@ -55,7 +58,8 @@ import { ParticipantPage } from '../pages/participant/participant';
       VideosLinksPage,
         CourseParticipantsPage,
         NotesPage,
-        ParticipantPage
+        ParticipantPage,
+        HomePage
 
     ],
     imports: [
@@ -80,7 +84,8 @@ import { ParticipantPage } from '../pages/participant/participant';
       SyncPage,
       VideosLinksPage,
         CourseParticipantsPage,
-        ParticipantPage
+        ParticipantPage,
+        HomePage
     ],
     providers: [
         StatusBar,
@@ -100,7 +105,8 @@ import { ParticipantPage } from '../pages/participant/participant';
         GlobalsProvider,
       Network,
       LinksProvider,
-        ParticipantsProvider
+        ParticipantsProvider,
+        FileOpener
     ]
 })
 export class AppModule {

@@ -1,6 +1,6 @@
 <?xml version='1.0' encoding='utf-8'?>
-<widget id="com.csps.applications.eldpen" version="0.0.1" windows-packageVersion="1.0.0.7" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
-    <name>csps-e-course</name>
+<widget id="com.csps.applications.eldpentest" version="0.0.1" windows-packageVersion="1.0.0.7" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
+    <name>eldp_en_test</name>
     <description>An awesome Ionic/Cordova app.</description>
     <author email="hi@ionicframework" href="http://ionicframework.com/">Ionic Framework Team</author>
     <content src="index.html" />
@@ -92,6 +92,7 @@
     <preference name="WindowsStoreDisplayName" value="csps-e-Briefing" />
     <plugin name="cordova-plugin-document-viewer" spec="~0.9.10" src="https://github.com/sitewaerts/cordova-plugin-document-viewer.git" />
     <plugin name="cordova-plugin-file" spec="~4.3.3" />
+    <plugin name="cordova-plugin-file-opener2" spec="2.2.0" />
     <engine name="ios" spec="4.5.5" />
     <engine name="android" spec="5.2.1" />
     <engine name="windows" spec="4.4.2" />

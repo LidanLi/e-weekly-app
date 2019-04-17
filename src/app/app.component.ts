@@ -7,12 +7,14 @@ import {TabsPage} from '../pages/tabs/tabs';
 import {GlobalsProvider} from "../providers/globals/globals";
 import {File} from "@ionic-native/file";
 import {SyncPage} from "../pages/sync/sync";
+import {HomePage} from "../pages/home/home";
 
 @Component({
     templateUrl: 'app.html'
 })
 export class MyApp {
-    rootPage: any = TabsPage;
+    //rootPage: any = TabsPage;
+    rootPage: any = HomePage
 
     constructor(private platform: Platform, statusBar: StatusBar, splashScreen: SplashScreen, private globals: GlobalsProvider, private file: File) {
         platform.ready().then(() => {
@@ -30,8 +32,10 @@ export class MyApp {
         if (!this.platform.is('core')) {
             this.file.checkFile(this.globals.dataDirectory, 'data/trip.json').then(dir =>
                 this.rootPage = TabsPage
+
             ).catch(err =>
-                this.rootPage = SyncPage
+                //this.rootPage = SyncPage
+                this.rootPage = HomePage
             );
         }
     }

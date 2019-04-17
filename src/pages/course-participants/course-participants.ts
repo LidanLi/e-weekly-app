@@ -18,7 +18,7 @@ import { GlobalsProvider } from "../../providers/globals/globals";
 })
 export class CourseParticipantsPage {
 
-  public participants: any;
+  public participants: any = [];
   public contactsUnSorted: any;
 
   constructor(public navCtrl: NavController, private participantsProvider: ParticipantsProvider, public globals: GlobalsProvider) {
@@ -28,13 +28,13 @@ export class CourseParticipantsPage {
   loadContacts() {
     this.participantsProvider.all()
       .then(data => {
-        this.participants = data;
-        //this.participants = this.contactsUnSorted.slice(0);
-        //this.participants.sort((leftside, rightside): number => {
-        //  if (leftside.last_name < rightside.last_name) return -1;
-        //  if (leftside.last_name > rightside.last_name) return 1;
-        //  return 0;
-       // });
+        this.contactsUnSorted = data;
+        this.participants = this.contactsUnSorted.slice(0);
+        this.participants.sort((leftside, rightside): number => {
+          if (leftside.last_name < rightside.last_name) return -1;
+          if (leftside.last_name > rightside.last_name) return 1;
+          return 0;
+        });
       });
   }
 
