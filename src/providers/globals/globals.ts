@@ -9,7 +9,7 @@ import {File} from "@ionic-native/file";
 export class GlobalsProvider {
 
     dataDirectory: string = '';
-    api_key: string = 'ESfJjx7vJvAiJwAiSvirCIp3GUBZicAIdy7oNk3tVQGFLKECnVOPZ81iDg4c';
+    api_key: string = '';
     trip_id: any = '1';
     api_url: string = 'https://ecoursetest.csps-efpc.net/api';
     list: any;
