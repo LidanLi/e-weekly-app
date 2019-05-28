@@ -8,7 +8,7 @@ import {File} from "@ionic-native/file";
 export class GlobalsProvider {
 
     dataDirectory: string = '';
-    api_key: string = 'fCzF9UKa4qo8AhitH0zTfcB5RQaHUi3Yk47nGExqpKK9kWP6Jyoe7tvrFafQ';
+    api_key: string = '';
     trip_id: string = '1';
     api_url: string = 'https://ebrief.csps-efpc.net/api';
     list: any;
