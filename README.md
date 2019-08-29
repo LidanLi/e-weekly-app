@@ -2,6 +2,14 @@
 
 [Ionic](https://ionicframework.com/framework) based mobile client for the [E-Briefing Service](https://github.com/cds-snc/e-briefing-service).
 
+
+## Update
+This `e-weekly-app` version is forked from CDS and updated with below modifications:
+
+1. On schedule page, layout change and contain more blocks. Background image change to the Shawn center.
+2. On the document page, more document type can be opened, including word, excel and powerpoint.
+3. On the Synchronization page, by entering a Secret Key the weekly agenda can be retrieved.
+
 ## Heads up!
 
 This project is still early in development and some of the processes involved in running, installing, and loading data 

@@ -6,67 +6,67 @@
 -->
 <ion-header>
 
-    <ion-navbar>
-        <ion-title>Sync</ion-title>
-    </ion-navbar>
+  <ion-navbar>
+    <ion-title>Sync</ion-title>
+  </ion-navbar>
 
 </ion-header>
 
 
 <ion-content padding>
-    <ion-card content>
-        <ion-card-header>
-            Sync data
-        </ion-card-header>
-        <ion-card-content>
-            <p><strong>Heads up!</strong> You should make sure this device is connected to a network that has access to the
-            internet.</p>
+  <ion-card content>
+    <ion-card-header>
+      Sync data
+    </ion-card-header>
+    <ion-card-content>
+      <p><strong>Heads up!</strong> You should make sure this device is connected to a network that has access to the
+        internet.</p>
 
 
-            <button ion-button full icon-left (click)="syncData()">
-                <ion-icon name="refresh"></ion-icon>
-                Sync Data
-            </button>
-        </ion-card-content>
-    </ion-card>
-    <ion-card>
-        <ion-card-header>
-            Enter Trip Owner
-        </ion-card-header>
-        <ion-card-content>
-            <ion-list>
-                <ion-item>
-                     
-                    <ion-input type="text" [(ngModel)]="trip_owner" >
-                        
-                    </ion-input>
-                   
-                </ion-item>
-            </ion-list>
-             <button ion-button default (click)="getCourseList()">Get Trip List</button>
-        </ion-card-content>
-    </ion-card>
-    <ion-card>
-        <ion-card-header>
-            Switch Trips
-        </ion-card-header>
-        <ion-card-content>
-            <ion-list>
+      <button ion-button full icon-left (click)="syncData()">
+        <ion-icon name="refresh"></ion-icon>
+        Sync Data
+      </button>
+    </ion-card-content>
+  </ion-card>
+  <ion-card>
+    <ion-card-header>
+      Enter Secret Key
+    </ion-card-header>
+    <ion-card-content>
+      <ion-list>
+        <ion-item>
 
-                <ion-item>
-                   
-                      <ion-label>Trip Title</ion-label>
-                      <ion-select [(ngModel)]="CourseList">
-                        <ion-option *ngFor="let list of lists" [value]="list.trip_id" >
-                          {{list.trip_name}}
-                        </ion-option>
-                      </ion-select>
-                </ion-item>
+          <ion-input type="text" [(ngModel)]="trip_owner" >
 
-            </ion-list>
-            <button ion-button full (click)="setTrip()">
-                Select Trip
-            </button>
-        </ion-card-content>
-    </ion-card>
+          </ion-input>
+
+        </ion-item>
+      </ion-list>
+      <button ion-button default (click)="getCourseList()">Get Week List</button>
+    </ion-card-content>
+  </ion-card>
+  <ion-card>
+    <ion-card-header>
+      Switch Week
+    </ion-card-header>
+    <ion-card-content>
+      <ion-list>
+
+        <ion-item>
+
+          <ion-label>Week Title</ion-label>
+          <ion-select [(ngModel)]="CourseList">
+            <ion-option *ngFor="let list of lists" [value]="list.trip_id" >
+              {{list.trip_name}}
+            </ion-option>
+          </ion-select>
+        </ion-item>
+
+      </ion-list>
+      <button ion-button full (click)="setTrip()">
+        Select Week
+      </button>
+    </ion-card-content>
+  </ion-card>
 </ion-content>

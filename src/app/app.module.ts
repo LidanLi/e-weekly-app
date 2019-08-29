@@ -25,54 +25,57 @@ import {File} from '@ionic-native/file';
 import {Zip} from "@ionic-native/zip";
 import {Network} from "@ionic-native/network";
 import {NotesPage} from "@pages/notes/notes";
+import {FileOpener} from "@ionic-native/file-opener";
+
 
 
 @NgModule({
-    declarations: [
-        MyApp,
-        ArticlePage,
-        ArticlesPage,
-        ContactsPage,
-        DocumentsPage,
-        DaysPage,
-        DayPage,
-        TabsPage,
-        EventPage,
-        ContactPage,
-        SyncPage,
-        NotesPage
-    ],
-    imports: [
-        BrowserModule,
-        HttpModule,
-        IonicModule.forRoot(MyApp),
-        ProvidersModule.forRoot(),
-    ],
-    bootstrap: [IonicApp],
-    entryComponents: [
-        MyApp,
-        ArticlePage,
-        ArticlesPage,
-        ContactsPage,
-        DocumentsPage,
-        DaysPage,
-        DayPage,
-        TabsPage,
-        EventPage,
-        ContactPage,
-        SyncPage,
-        NotesPage
-    ],
-    providers: [
-        StatusBar,
-        SplashScreen,
-        {provide: ErrorHandler, useClass: IonicErrorHandler},
-        DocumentViewer,
-        FileTransfer,
-        File,
-        Zip,
-        Network,
-    ]
+  declarations: [
+    MyApp,
+    ArticlePage,
+    ArticlesPage,
+    ContactsPage,
+    DocumentsPage,
+    DaysPage,
+    DayPage,
+    TabsPage,
+    EventPage,
+    ContactPage,
+    SyncPage,
+    NotesPage
+  ],
+  imports: [
+    BrowserModule,
+    HttpModule,
+    IonicModule.forRoot(MyApp),
+    ProvidersModule.forRoot(),
+  ],
+  bootstrap: [IonicApp],
+  entryComponents: [
+    MyApp,
+    ArticlePage,
+    ArticlesPage,
+    ContactsPage,
+    DocumentsPage,
+    DaysPage,
+    DayPage,
+    TabsPage,
+    EventPage,
+    ContactPage,
+    SyncPage,
+    NotesPage
+  ],
+  providers: [
+    StatusBar,
+    SplashScreen,
+    {provide: ErrorHandler, useClass: IonicErrorHandler},
+    DocumentViewer,
+    FileTransfer,
+    File,
+    Zip,
+    Network,
+    FileOpener
+  ]
 })
 export class AppModule {
 }
